@@ -1,23 +1,21 @@
-const currentDay = document.querySelector('.current-day')
-const funFact = document.querySelector('.fun-fact')
+let todoInput //input
+let errorInfo //error messenge
+let addBtn // add button
+let ulList // takslist
 
-const facts = [
-	'Krokodyl nie potrafi wystawić języka.',
-	'Każdy człowiek spędził około pół godziny jako pojedyncza komórka.',
-	'Dźwięk przemieszcza się 15 razy szybciej przez stal niż przez powietrze.',
-	'Leniwce potrzebują dwóch tygodni na strawienie jedzenia.',
-	'Goryle śpią nawet czternaście godzin dziennie.',
-	'Język kameleona jest dwukrotnie dłuższy od jego ciała.',
-	'Chińczycy w ciągu roku zużywają około 80 miliardów pałeczek.',
-	'Żeby wejść na Wieżę Eiffla trzeba pokonać aż 1710 stopni.'
-]
+const main = () => {
+	prepareDOMelements()
+	prepareDOMevents()
 
-const day = new Date()
-currentDay.textContent = day.toLocaleDateString("pl", { weekday: "long"});
+}
+const prepareDOMelements = () => {
+todoInput = document.querySelector('.todo-input')
+errorInfo = document.querySelector('.error-info')
+addBtn = document.querySelector('.btn-add')
+ulList = document.querySelector('.todolist ul')
+}
+const prepareDOMevents = () => {
 
-const showFact = () => {
-	const randomNumber = Math.floor(Math.random() * (facts.length - 1))
-	funFact.textContent = facts[randomNumber]
 }
 
-showFact()
+document.addEventListener('DOMContentloaded', main)
