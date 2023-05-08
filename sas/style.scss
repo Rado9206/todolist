@@ -6,9 +6,9 @@
 
 :root {
 	--white: #ffffff;
-	--light: #E9ECEF;
-	--light-gray: #CED4DA;
-	--dark-gray: #ADB5BD;
+	--light: #e9ecef;
+	--light-gray: #ced4da;
+	--dark-gray: #adb5bd;
 	--grafit: #495057;
 	--main-color: #14213d;
 	--black: #000000;
@@ -85,7 +85,6 @@ h1 {
 	padding: 20px 0;
 }
 
-
 .todolist li {
 	display: flex;
 	justify-content: space-between;
@@ -130,7 +129,6 @@ h1 {
 }
 
 .completed {
-	font-size: .9rem;
 	color: var(--grafit);
 	text-decoration: line-through;
 	font-style: italic;
@@ -158,6 +156,8 @@ h1 {
 
 .popup-info {
 	margin-bottom: 20px;
+	color: tomato;
+	font-weight: bold;
 }
 
 .popup-body {
