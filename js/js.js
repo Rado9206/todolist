@@ -4,7 +4,7 @@ let addBtn // add button
 let ulList // takslist
 let newTodo // new task
 
-let popup //popu
+let popup //popup
 let popupInfo //error messenge if add empty text
 let todoToEdit // edited popup
 let popupInput // input in popup
@@ -12,8 +12,8 @@ let popupAddBtn // button Zatwierdź into popup
 let popupCloseBtn // button Anuluj into popup
 
 const main = () => {
-	prepareDOMelements()
-	prepareDOMevents()
+	prepareDOMelements() // pobiera nasze wszystkie elelmenty
+	prepareDOMevents() //obsluguje addEventListenery
 }
 
 const prepareDOMelements = () => {
@@ -61,7 +61,7 @@ const createTodoArea = () => {
 
 	const editBtn = document.createElement('button')
 	editBtn.classList.add('edit')
-	editBtn.textContent = 'EDIT'
+	editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>'
 
 	const deleteBtn = document.createElement('button')
 	deleteBtn.classList.add('delete')
@@ -74,7 +74,7 @@ const checkClick = e => {
 	if (e.target.matches('.complete')) {
 		e.target.closest('li').classList.toggle('completed')
 		e.target.classList.toggle('completed')
-	} else if (e.target.matches('.edit')) {
+	} else if (e.target.closest('button').classList.contains('edit')) {
 		editTodo(e)
 	} else if (e.target.matches('.delete')) {
 		deleteTodo(e)
@@ -82,7 +82,7 @@ const checkClick = e => {
 }
 
 const editTodo = e => {
-	todoToEdit = e.target.closest('li')
+	todoToEdit = e.target.closest('button')
 	popupInput.value = todoToEdit.firstChild.textContent
 	popup.style.display = 'flex'
 }
