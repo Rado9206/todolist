@@ -22,6 +22,7 @@ const prepareDOMelements = () => {
 	addBtn = document.querySelector('.btn-add')
 	ulList = document.querySelector('.todolist ul')
 
+	popupPanel = document.querySelector('.add-todo-panel')
 	popup = document.querySelector('.popup')
 	popupInfo = document.querySelector('.popup-info')
 	popupInput = document.querySelector('.popup-input')
@@ -81,20 +82,21 @@ const checkClick = e => {
 	}
 }
 
+
 const editTodo = e => {
-	todoToEdit = e.target.closest('button')
+	popupPanel.style.display = 'flex'
+	todoToEdit = e.target.closest('li')
 	popupInput.value = todoToEdit.firstChild.textContent
-	popup.style.display = 'flex'
 }
 
 const closePopup = () => {
-	popup.style.display = 'none'
+	popupPanel.style.display = 'none'
 }
 
 const changeTodoText = () => {
 	if (popupInput.value !== '') {
 		todoToEdit.firstChild.textContent = popupInput.value
-		popup.style.display = 'none'
+		popupPanel.style.display = 'none'
 		popupInfo.textContent = ''
 	} else {
 		popupInfo.textContent = 'Musisz podać jakąś treść!'

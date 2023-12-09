@@ -145,13 +145,12 @@ h1 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
-
-.popup {
+.add-todo-panel .popup {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 800px;
@@ -159,27 +158,23 @@ h1 {
   background-color: var(--light-gray);
   border-radius: 5px;
 }
-
-.popup h3 {
+.add-todo-panel .popup h3 {
   color: var(--main-color);
   padding: 20px;
 }
-
-.popup-info {
-  margin-bottom: 20px;
-  color: tomato;
-  font-weight: bold;
-}
-
-.popup-body {
+.add-todo-panel .popup .popup-body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 90%;
   padding: 10px;
 }
-
-.popup-input {
+.add-todo-panel .popup .popup-body .popup-info {
+  margin-bottom: 20px;
+  color: tomato;
+  font-weight: bold;
+}
+.add-todo-panel .popup .popup-body .popup-input {
   width: 100%;
   padding: 10px 20px;
   border: none;
@@ -187,8 +182,7 @@ h1 {
   color: var(--black);
   background-color: var(--white);
 }
-
-.popup-btn {
+.add-todo-panel .popup .popup-body .popup-btn {
   width: 30%;
   display: inline-block;
   padding: 10px 22px;
@@ -202,8 +196,7 @@ h1 {
   transition: color 0.3s, background-color 0.3s;
   font-weight: bold;
 }
-
-.popup-btn:hover {
+.add-todo-panel .popup .popup-body .popup-btn:hover {
   color: var(--white);
   background-color: var(--grafit);
 }/*# sourceMappingURL=style.css.map */
